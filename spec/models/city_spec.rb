@@ -7,6 +7,7 @@ RSpec.describe City, type: :model do
 
     describe 'validations' do
         it { should validate_presence_of :population }
-        it { should validate_presence_of :capitol }
+        # it { should validate_presence_of :capitol }
         it { should validate_presence_of :name}
     end
+end
