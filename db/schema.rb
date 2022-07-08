@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_001155) do
+ActiveRecord::Schema.define(version: 2022_07_08_021734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_001155) do
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.boolean "continental"
-    t.integer "lakes"
+    t.integer "number_of_lakes"
     t.string "biome"
     t.float "land_area"
     t.datetime "created_at", null: false

@@ -3,7 +3,7 @@ class CreateStates < ActiveRecord::Migration[5.2]
     create_table :states do |t|
       t.string :name
       t.boolean :continental
-      t.integer :lakes
+      t.integer :number_of_lakes
       t.string :biome
       t.float :land_area
 
