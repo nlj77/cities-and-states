@@ -22,9 +22,9 @@ RSpec.describe 'States cities index' do
         expect(current_path).to eq("/cities/#{@denver.id}")
     end
 
-    # it 'shows the average population of the entered cities for the state' do
-    #     visit "/states/#{@colorado.id}/cities"
-
-    #     expect(page).to have_content("Average Population of given cities for Colorado: 389000.0")
-    # end
+    it 'shows the average population of the entered cities for the state' do
+        visit "/states/#{@colorado.id}"
+    
+        expect(page).to have_content("Average Population of given cities for Colorado: 389000.0")
+    end
 end
