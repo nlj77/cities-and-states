@@ -2,30 +2,29 @@ require 'rails_helper'
 
 RSpec.describe 'States cities index' do 
     before :each do
-        @colorado = State.create!(name: 'Colorado')
-        @purple = @prince.songs.create!(title: 'Purple Rain', length: 846, play_count: 8999)
-        @beret = @prince.songs.create!(title: 'Raspberry Beret', length: 300, play_count: 7550)
-
+        @colorado = State.create!(name: 'Colorado', number_of_lakes:500, biome: 'High Desert', land_area: 104185)
+        @denver = @colorado.cities.create!(name: 'Denver', capitol: true, population: 716000)
+        @grand_junction = @colorado.cities.create!(name: 'Grand Junction', capitol: false, population: 62000)
     end
-    it 'shows all of the titles of the songs for the artist' do 
+    it 'shows all of the names of the cities for the state' do 
 
-        visit "/artists/#{@prince.id}/songs"
+        visit "/states/#{@colorado.id}/cities"
 
-        expect(page).to have_content(@purple.title)
-        expect(page).to have_content(@beret.title)
-    end
-
-    it "links to each songs show page" do 
-        visit "/artists/#{@prince.id}/songs"
-
-        click_on @purple.title
-
-        expect(current_path).to eq("/songs/#{@purple.id}")
+        expect(page).to have_content(@denver.name)
+        expect(page).to have_content(@grand_junction.name)
     end
 
-    it 'shows the average song length for the artist' do
-        visit "/artists/#{@prince.id}/songs"
+    # it "links to each cities show page" do 
+    #     visit "/states/#{@colorado.id}/cities"
 
-        expect(page).to have_content("Average Song Length for Prince: 573")
-    end
+    #     click_on @denver.name
+
+    #     expect(current_path).to eq("/cities/#{@denver.id}")
+    # end
+
+    # it 'shows the average population of the entered cities for the state' do
+    #     visit "/states/#{@colorado.id}/cities"
+
+    #     expect(page).to have_content("Average Population of given cities for Colorado: 389000.0")
+    # end
 end

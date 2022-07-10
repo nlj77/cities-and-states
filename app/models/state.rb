@@ -5,4 +5,8 @@ class State < ActiveRecord::Base
     validates_presence_of :number_of_lakes
     validates_presence_of :biome
     validates_presence_of :land_area
+
+    def average_population
+        self.cities.average(:population)
+    end
 end
