@@ -14,13 +14,13 @@ RSpec.describe 'States cities index' do
         expect(page).to have_content(@grand_junction.name)
     end
 
-    # it "links to each cities show page" do 
-    #     visit "/states/#{@colorado.id}/cities"
+    it "links to each cities show page" do 
+        visit "/states/#{@colorado.id}/cities"
 
-    #     click_on @denver.name
+        click_on @denver.name
 
-    #     expect(current_path).to eq("/cities/#{@denver.id}")
-    # end
+        expect(current_path).to eq("/cities/#{@denver.id}")
+    end
 
     # it 'shows the average population of the entered cities for the state' do
     #     visit "/states/#{@colorado.id}/cities"
