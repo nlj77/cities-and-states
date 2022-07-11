@@ -1,0 +1,7 @@
+<h1> Cities </h1>
+<% @cities.each do |city| %>
+    <h3> <%= city.name %> </h3>
+    <p> Population of <%= city.population %> </p>
+    <p> Capitol? <%= city.capitol %> </p>
+    <p> State ID: <%= city.state_id %> </p>
+<% end %>

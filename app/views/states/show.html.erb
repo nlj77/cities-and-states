@@ -1,3 +1,17 @@
-<h1> @state.name </h1>
+<h1> <%= @state.name %>  </h1>
 
 <p> Average Population of given cities for <%= @state.name %>: <%= @state.average_population %> </p>
+<p> Biome of  <%= @state.name %>: <%= @state.biome %> </p>
+<p> Is the state part of the continental US? <%= @state.name %>: <%= @state.continental %> </p>
+<p> <%=@state.name %> has <%= @state.number_of_lakes %> lakes </p>
+<p> <%=@state.name %> has <%= @state.land_area %> square miles of land </p>
+<p> <%=@state.name %> was created at <%= @state.created_at %>
+<p> <%=@state.name %> was last updated at <%= @state.updated_at %>
+
+
+
+    <%# t.integer "number_of_lakes"
+        t.string "biome"
+        t.float "land_area"
+        t.datetime "created_at", null: false
+        t.datetime "updated_at", null: false %>
