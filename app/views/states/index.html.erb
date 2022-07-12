@@ -1,5 +1,9 @@
 <h1> States </h1>
-<% @states.each do |state| %>
-    <%= state.name %>
+
+<% @states.each_with_index do |state, index| %>
+<div id="state-<%= index %>">
+    <p><b>  <%= state.name %></b></p>
+    <p> Created at: <%= state.created_at %> </p>
+    </div>
 <% end %>
 
