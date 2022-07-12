@@ -18,4 +18,10 @@ RSpec.describe 'States cities index' do
         
         # expect(page).to have_content
     end
+
+    it "when I visit the show page for states, I see a count of the number of children associated with this parent" do
+        visit "/states/#{@colorado.id}"
+
+        expect(page).to have_content("Colorado currently has 2 cities")
+    end
 end
