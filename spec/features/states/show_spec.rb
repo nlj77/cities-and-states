@@ -24,4 +24,14 @@ RSpec.describe 'States cities index' do
 
         expect(page).to have_content("Colorado currently has 2 cities")
     end
+
+    it "when I visit the show page for states, I see a link to the state's cities" do
+        visit "/states/#{@colorado.id}"
+
+        expect(page).to have_content("Colorado's cities")
+
+        click_link('cities')
+
+        expect(page).to have_current_path("/states/#{@colorado.id}/cities")
+    end
 end

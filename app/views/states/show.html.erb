@@ -1,7 +1,7 @@
-<h3> <%= link_to 'States', 'states#index' %> </h3>
-<h3> <%= link_to 'Cities', 'cities#index' %> </h3>
+<h3> <%= link_to 'States', '/states' %> </h3>
+<h3> <%= link_to 'Cities', '/cities' %> </h3>
 <h1> <%= @state.name %>  </h1>
-
+<h3> <%= @state.name %>'s <a href="/states/<%=@state.id%>/cities">cities </a> 
 <p> Average Population of given cities for <%= @state.name %>: <%= @state.average_population %> </p>
 <p> Biome of  <%= @state.name %>: <%= @state.biome %> </p>
 <p>  Is the state part of the continental US? <%= @state.name %>: <%= @state.continental %> </p>
