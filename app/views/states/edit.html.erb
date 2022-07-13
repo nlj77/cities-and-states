@@ -1,0 +1,14 @@
+<%= form_with url: "/states/#{@state.id}", method: :patch, local: true do |form| %>
+    <h3> <%= form.label :name_of_state %></h3>
+    <%= form.text_field :name %>
+    <h3> <%= form.label :continental, "Is the state part of the continental US?" %> </h3>
+    <%= form.select :continental, ["Yes", "No"] %>
+    <h3><%= form.label :total_land_area %></h3>
+    <%= form.number_field :land_area%>
+    <h3><%= form.label :number_of_lakes?%></h3>
+    <%= form.number_field :number_of_lakes%>
+    <h3><%= form.label :biome%></h3>
+    <%= form.text_field :biome%>
+
+    <h3><%= form.submit "Update" %></h3>
+<% end %>

@@ -34,4 +34,23 @@ RSpec.describe 'States cities index' do
 
         expect(page).to have_current_path("/states/#{@colorado.id}/cities")
     end
+
+    # User Story 12, Parent Update 
+
+# As a visitor
+# When I visit a parent show page
+# Then I see a link to update the parent "Update Parent"
+# When I click the link "Update Parent"
+# Then I am taken to '/parents/:id/edit' where I  see a form to edit the parent's attributes:
+# When I fill out the form with updated information
+# And I click the button to submit the form
+# Then a `PATCH` request is sent to '/parents/:id',
+# the parent's info is updated,
+# and I am redirected to the Parent's Show page where I see the parent's updated info
+    it " when I visit the states show page, I can click a link to update state" do
+
+        visit "/states/#{@colorado.id}"
+
+        expect(page).to have_content("Update State")
+    end
 end

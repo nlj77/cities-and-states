@@ -10,6 +10,8 @@
 <p> <%=@state.name %> was created at <%= @state.created_at %>
 <p> <%=@state.name %> was last updated at <%= @state.updated_at %>
 <p> <%=@state.name %> currently has <%= @state.cities.count %> cities </p>
-<%# Author.joins(:books).where(books: { author: author }) %>
+
+<h4> <%= link_to 'Update State', "/states/#{@state.id}/edit"%> </h4>
+
 
 
