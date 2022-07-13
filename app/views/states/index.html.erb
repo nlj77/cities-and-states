@@ -1,3 +1,6 @@
+<h3> <%= link_to 'States', '/states' %> </h3>
+<h3> <%= link_to 'Cities', '/cities' %> </h3>
+
 <h1> States </h1>
 
 <% @states.each_with_index do |state, index| %>
@@ -6,4 +9,5 @@
     <p> Created at: <%= state.created_at %> </p>
     </div>
 <% end %>
+<h3> <%= link_to 'New State', '/states/new'%> </h3>
 
